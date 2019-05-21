@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import AutocompletePlace from './AutocompletePlace'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      place: null,
+    }
+    this.handleSelect = this.handleSelect.bind(this)
+  }
+  handleSelect(place) {
+    this.setState({ place })
+  }
+  render() {
+    return (
+      <div className="App">
+        <h1>React Mapbox Place Autocomplete</h1>
+        <AutocompletePlace onSelect={this.handleSelect} />
+
+        {!this.state.place && <div>No place selected</div>}
+
+        {this.state.place && <div>Info about the place: <pre>{JSON.stringify(this.state.place,null,2)}</pre></div>}
+      </div>
+    );
+  }
 }
 
 export default App;

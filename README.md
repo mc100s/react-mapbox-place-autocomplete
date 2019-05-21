@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Mapbox Place Autocomplete
 
-## Available Scripts
+This project is to show an example on how to create an input to auto complete places with Mapbox. 
 
-In the project directory, you can run:
+You have an demo here: WIP
 
-### `npm start`
+## How to reuse autocomplete in my project?
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Go to Mapbox to retrieve an API key
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+First, you need to make sure you have an account on Mapbox and you need to retrieve your API key [here](https://account.mapbox.com).
 
-### `npm test`
+### Add the API key to `.env`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Then, in the React folder, you need to create a file `.env` like this:
+```
+REACT_APP_MAPBOX_API_KEY=YourApiKey
+```
 
-### `npm run build`
+### Install `axios`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Then, make sure that axios is installed in your project. If not, you can simply type:
+```
+$ npm i axios
+```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Copy/paste the code of `Autocomplete`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Then, you can copy/paste the two files `src/Autocomplete.jsx` and `src/Autocomplete.css`. 
 
-### `npm run eject`
+Feel free to change the code. For example, you can change the timeout of 1000ms is `Autocomplete.jsx` or you can change the CSS.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Use the component `Autocomplete`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Finally, wherever you want in your React application, you can use the component `Autocomplete`, for example like this:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```js
+<Autocomplete onSelect={place => console.log(place)} />
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
