@@ -2,7 +2,14 @@
 
 This project is to show an example on how to create an input to auto complete places with Mapbox. 
 
-You have an demo here: WIP
+This is some features of this `AutocompletePlace` component:
+- The user can type an address in an input
+- The user can preview suggestions
+- We can get information of the selected place (full address, coordinates, ...)
+
+You have an demo here: https://lucid-meninsky-db99dc.netlify.com
+
+![Imgur](https://i.imgur.com/W21xRmN.png)
 
 ## How to reuse autocomplete in my project?
 
